@@ -6,11 +6,16 @@ Verify installation:
 node -v
 npm -v
 Installation
+
 Open terminal inside the project folder
+
 Install dependencies: npm install
+
 Install Playwright browsers:npx playwright install
+
 How to Run Tests
 Open a terminal inside the project root folder.
+
 Run all automated tests: npx playwright test
 npx playwright test --headed
 test-results/
@@ -40,4 +45,5 @@ Test Results Summary
 
 Total Test Cases: 34
 Status: Successfully executed
+
 Reports: Available in test-results folder
