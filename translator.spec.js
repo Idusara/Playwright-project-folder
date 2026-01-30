@@ -214,63 +214,63 @@ test('Neg_Fun_01 - Empty input', async ({ page }) => {
   await page.goto('https://www.swifttranslator.com/');
   await typeInput(page, '');
   await page.waitForTimeout(2000);
-  expect(await page.textContent('body')).toBeTruthy();
+  expect(await page.textContent('body')).not.toMatch(/[\u0D80-\u0DFF]/);
 });
 
 test('Neg_Fun_02 - Only numbers', async ({ page }) => {
   await page.goto('https://www.swifttranslator.com/');
   await typeInput(page, '123456');
   await page.waitForTimeout(2000);
-  expect(await page.textContent('body')).toBeTruthy();
+  expect(await page.textContent('body')).not.toMatch(/[\u0D80-\u0DFF]/);
 });
 
 test('Neg_Fun_03 - Only symbols', async ({ page }) => {
   await page.goto('https://www.swifttranslator.com/');
   await typeInput(page, '@@@###');
   await page.waitForTimeout(2000);
-  expect(await page.textContent('body')).toBeTruthy();
+  expect(await page.textContent('body')).not.toMatch(/[\u0D80-\u0DFF]/);
 });
 
 test('Neg_Fun_04 - Random letters', async ({ page }) => {
   await page.goto('https://www.swifttranslator.com/');
   await typeInput(page, 'asdfghjkl');
   await page.waitForTimeout(2000);
-  expect(await page.textContent('body')).toBeTruthy();
+  expect(await page.textContent('body')).not.toMatch(/[\u0D80-\u0DFF]/);
 });
 
 test('Neg_Fun_05 - Extra spaces', async ({ page }) => {
   await page.goto('https://www.swifttranslator.com/');
   await typeInput(page, 'mama    gedhara     yanavaa');
   await waitForSinhala(page);
-  expect(await page.textContent('body')).toBeTruthy();
+  expect(await page.textContent('body')).not.toMatch(/[\u0D80-\u0DFF]/);
 });
 
 test('Neg_Fun_06 - English only', async ({ page }) => {
   await page.goto('https://www.swifttranslator.com/');
   await typeInput(page, 'Please send the email');
   await page.waitForTimeout(2000);
-  expect(await page.textContent('body')).toBeTruthy();
+  expect(await page.textContent('body')).not.toMatch(/[\u0D80-\u0DFF]/);
 });
 
 test('Neg_Fun_07 - Long English paragraph', async ({ page }) => {
   await page.goto('https://www.swifttranslator.com/');
   await typeInput(page, 'This is a long English paragraph used to test system behavior.');
   await page.waitForTimeout(2000);
-  expect(await page.textContent('body')).toBeTruthy();
+  expect(await page.textContent('body')).not.toMatch(/[\u0D80-\u0DFF]/);
 });
 
 test('Neg_Fun_08 - Mixed garbage', async ({ page }) => {
   await page.goto('https://www.swifttranslator.com/');
   await typeInput(page, '!!! mama ### yanavaa ???');
   await waitForSinhala(page);
-  expect(await page.textContent('body')).toBeTruthy();
+  expect(await page.textContent('body')).not.toMatch(/[\u0D80-\u0DFF]/);
 });
 
 test('Neg_Fun_09 - Rapid typing', async ({ page }) => {
   await page.goto('https://www.swifttranslator.com/');
   await page.locator('textarea').first().type('mamagedharayanavaa', { delay: 1 });
   await waitForSinhala(page);
-  expect(await page.textContent('body')).toBeTruthy();
+  expect(await page.textContent('body')).not.toMatch(/[\u0D80-\u0DFF]/);
 });
 
 test('Neg_Fun_10 - Clear input', async ({ page }) => {
@@ -278,5 +278,5 @@ test('Neg_Fun_10 - Clear input', async ({ page }) => {
   await typeInput(page, 'mama gedhara yanavaa');
   await page.locator('textarea').first().fill('');
   await page.waitForTimeout(2000);
-  expect(await page.textContent('body')).toBeTruthy();
+  expect(await page.textContent('body')).not.toMatch(/[\u0D80-\u0DFF]/);
 });
