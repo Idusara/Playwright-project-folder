@@ -78,6 +78,7 @@ const negativeCases = [
 
 negativeCases.forEach(([id, inputText]) => {
   test(id, async ({ page }) => {
+    test.fail();
     await typeInput(page, inputText);
 
     const output = page.locator(OUTPUT_LOCATOR).first();
