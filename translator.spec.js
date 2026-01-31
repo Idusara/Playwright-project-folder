@@ -87,5 +87,16 @@ negativeCases.forEach(([id, inputText, wrongExpected]) => {
   });
 });
 
+// UI smoke test: verify main UI elements are present
+test('UI_Check_01', async ({ page }) => {
+  await page.goto(URL);
+  await page.waitForTimeout(3000);
+
+  // verify language option labels and main buttons are visible
+  await expect(page.locator('text=Singlish')).toBeVisible();
+  await expect(page.locator('text=Sinhala')).toBeVisible();
+  await expect(page.locator('text=Clear')).toBeVisible();
+});
+
 
 
