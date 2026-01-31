@@ -21,41 +21,41 @@ async function typeInput(page, text) {
 
 test.beforeEach(async ({ page }) => {
   await page.goto(URL);
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(8000);
 });
 
 
-
 const positiveCases = [
-  'mama gedhara yanavaa',
-  'oyaata kohomadha?',
-  'vahaama enna',
-  'mama ehema karanne naehae',
-  'aayuboovan!',
-  'karunaakaralaa mata udhavvak karanna puluvandha?',
-  'ehema karapan',
-  'ada Zoom meeting ekak thiyenavaa',
-  'mama iye gedhara giyaa',
-  'api heta yamu',
-  'oyaalaa enavaa',
-  'hari hari lassanayi',
-  'mamagedharayanavaa',
-  'Rs. 1500 ganna ona',
-  '2025-12-25 api holiday',
-  'api Kandy yamu',
-  'ela machan supiri',
-  'ada vaessa vahinavaa nisaa api gedhara inne.',
-  'meeka hariyata vaeda karanavaadha?',
-  '7.30 AM enna',
-  'kg 5 bath ona',
-  'mama gedhara inne\noyaa enavadha?',
-  'dhitvaa suli kunaatuva samaga api gedhara inne.',
-  'eyaalaa gedhara enavaa'
+  ['mama gedhara yanavaa','මම ගෙදර යනවා'],
+  ['oyaata kohomadha?','ඔයාට කොහොමද?'],
+  ['vahaama enna','වහාම එන්න'],
+  ['mama ehema karanne naehae','මම එහෙම කරන්නේ නැහැ'],
+  ['aayuboovan!','ආයුබෝවන්!'],
+  ['karunaakaralaa mata udhavvak karanna puluvandha?','කරුනාකරලා මට උදව්වක් කරන්න පුලුවන්ද?'],
+  ['ehema karapan','එහෙම කරපන්'],
+  ['adha Zoom meeting ekak thiyenavaa','අද Zoom meeting එකක් තියෙනවා'],
+  ['mama iye gedhara giyaa','මම ඉයෙ ගෙදර ගියා'],
+  ['api heta yamu','අපි හෙට යමු'],
+  ['oyaalaa enavaa','ඔයාලා එනවා'],
+  ['hari hari lassanayi','හරි හරි ලස්සනයි'],
+  ['mamagedharayanavaa','මමගෙදරයනවා'],
+  ['Rs. 1500 ganna ona','Rs. 1500 ගන්න ඔන'],
+  ['2025-12-25 api holiday','2025-12-25 අපි holiday'],
+  ['api Kandy yamu','අපි Kandy යමු'],
+  ['ela machan supiri','එල මචන් සුපිරි'],
+  ['ada vaessa vahinavaa nisaa api gedhara inne.','ඇත්තට වැසස් වහිනවා නිසා අපි ගෙදර ඉන්න'],
+  ['meeka hariyata vaeda karanavaadha?','මෙකකට හරයට වැදකරනවදහ?'],
+  ['7.30 AM enna','7.30 AM එනව'],
+  ['kg 5 bath ona','කග. 5බතයනවආ'],
+  ['mama gedhara inne\noyaa enavadha?','මමගේදහරයනවආ\nඔයලට එනවදහ?'],
+  ['dhitvaa suli kunaatuva samaga api gedhara inne.','ධිත්වය සුලි කණතවසමගට අපි ගෙදර ඉන്ന'],
+  ['eyaalaa gedhara enavaa','එයලටගතගතගතගතගතගතගතගතගතගතගත']
 ];
 
-positiveCases.forEach((sentence, i) => {
+positiveCases.forEach((testCase, i) => {
   test(`Pos_Fun_${i+1}`, async ({ page }) => {
-    await typeInput(page, sentence);
+    const inputText = testCase[0];
+    await typeInput(page, inputText);
     await waitForSinhalaOutput(page);
   });
 });
