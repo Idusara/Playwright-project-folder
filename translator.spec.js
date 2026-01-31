@@ -43,13 +43,13 @@ const positiveCases = [
   ['2025-12-25 api holiday','2025-12-25 අපි holiday'],
   ['api Kandy yamu','අපි Kandy යමු'],
   ['ela machan supiri','එල මචන් සුපිරි'],
-  ['ada vaessa vahinavaa nisaa api gedhara inne.','ඇත්තට වැසස් වහිනවා නිසා අපි ගෙදර ඉන්න'],
-  ['meeka hariyata vaeda karanavaadha?','මෙකකට හරයට වැදකරනවදහ?'],
-  ['7.30 AM enna','7.30 AM එනව'],
-  ['kg 5 bath ona','කග. 5බතයනවආ'],
-  ['mama gedhara inne\noyaa enavadha?','මමගේදහරයනවආ\nඔයලට එනවදහ?'],
-  ['dhitvaa suli kunaatuva samaga api gedhara inne.','ධිත්වය සුලි කණතවසමගට අපි ගෙදර ඉන്ന'],
-  ['eyaalaa gedhara enavaa','එයලටගතගතගතගතගතගතගතගතගතගතගත']
+  ['adha vaessa vahinavaa nisaa api gedhara inne.','අද වැස්ස වහිනවා නිසා අපි ගෙදර ඉන්නේ.'],
+  ['meeka hariyata vaeda karanavaadha?','මේක හරියට වැඩ කරනවාද?'],
+  ['7.30 AM enna','7.30 AM එන්න'],
+  ['kg 5 bath ona','kg 5 බත් ඔන'],
+  ['mama gedhara inne\noyaa enavadha?','මම ගෙදර ඉන්නේ\නොයා එනවද?'],
+  ['dhitvaa suli kunaatuva samaga api gedhara inne.','දිට්වා සුලි කුනාටුව සමග අපි ගෙදර ඉන්නේ.'],
+  ['eyaalaa gedhara enavaa','එයාලා ගෙදර එනවා']
 ];
 
 positiveCases.forEach((testCase, i) => {
