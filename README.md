@@ -1,3 +1,5 @@
+IT23635548 - Playwright Automation Project
+
 Prerequisites
 Make sure the following are installed on your machine:
 Node.js (v16 or above)
@@ -47,3 +49,4 @@ Total Test Cases: 34
 Status: Successfully executed
 
 Reports: Available in test-results folder
+
